@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+  font-family: 'Montserrat', sans-serif;
+  margin:2px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+#euros{
+  margin-right:14px;
+}
+input[type="number"]{
+  width: 100px;
+  text-align:right;  
+}
+label{
+  font-size:0.8em;
+}
+.caja{
+  padding:6px;
+  margin-top:10px;
+  border-radius:5px;
+}
+#cambio{
+  font-size:0.7em;
+}
+.caja1{
+  background-color:#f3b605;
+  display: flex;
+  justify-content: space-start;
+  text-align: center;
+  align-items: center;
+}
+.caja2{
+  color:white;
+  font-size:0.75em;
+  background-color:#4081ec;
+  display: flex;
+  justify-content: space-start;
+  text-align: center;
+  align-items: center;
+}
+
+.donado{
+  font-size:0.7em;
+  background-color: rgb(99, 196, 3);
+  color: black;
+  border-radius:5px;
+  padding:6px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.NoDonado{
+  font-size:0.7em;
+  background-color: rgb(196, 9, 3);
+  color: black;
+  border-radius:5px;
+  padding:6px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.caja0{
+  background-color: #b1cbf4;
+  text-align: center;
+}
+
+.contededorFooter{
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  align-items:center;
+  text-align:center;
+  font-size:1.7em;
+  background-color: #84abea;
+}

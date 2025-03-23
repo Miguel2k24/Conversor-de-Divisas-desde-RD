@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/clase 8/style.css"/>
+  <title>Conversor de Divisa</title>
+</head>
+
+<body>
+  <div class="caja caja0">
+    <h1>Conversor de Divisa</h1>
+  </div>
+  <!-- La moneda a convertir -->
+  <select>  
+  </select>
+  <span id="cambio"></span>
+
+  <!-- Escribir / mostrar euros | la divisa escogida-->
+  <div class="caja caja1">
+      <label>Peso Dominicano:</label>
+      <input type="number" id="peso" autofocus/>
+      <label>Divisa:</label>
+      <input type="number" id="divisa"/>
+  </div>
+  
+  <!-- Apartado de DONACIONES -->
+  <div class="caja caja2">
+    <button id="donar">Donar el 5%</button>
+    <input type="number" readonly id="donacion"/>DOP
+  </div>
+
+  <script src="/clase 8/index.js"></script>
+</body>
+</html>
