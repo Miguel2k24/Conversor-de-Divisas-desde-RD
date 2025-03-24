@@ -1,6 +1,7 @@
 const PESO = document.querySelector("#peso");
 PESO.addEventListener("keyup", calcularPeso);
 const DIVISA = document.querySelector("#divisa");
+DIVISA.addEventListener("keyup", calcularDivisa);
 const SELECT = document.querySelector("select");
 const BTN = document.querySelector("#donar");
 const DONACION = document.querySelector("#donacion");
@@ -16,7 +17,7 @@ SELECT.insertAdjacentHTML("beforeend", `
     <option value="0.32">Pesos mexicanos</option>
 `);
 
-SELECT.addEventListener("click", cambio);
+SELECT.addEventListener("change", cambio);
 
 function cambio(){
     document.querySelector("#cambio").innerHTML = `1 DOP peso es ${SELECT.value} ${SELECT.options[SELECT.selectedIndex].text}`;
@@ -30,7 +31,13 @@ function cambio(){
 function calcularPeso(){
     let divisa = PESO.value * SELECT.value;
     DIVISA.value = divisa.toFixed(2);
-    DONACION.value = PESO.value * 0.05;
+    DONACION.value = parseFloat(PESO.value * 0.05).toFixed(2);
+    BTN.disabled = false;
+}
+function calcularDivisa(){
+    let peso = DIVISA.value / SELECT.value;
+    PESO.value = peso.toFixed(2);
+    DONACION.value = parseFloat(PESO.value * 0.05).toFixed(2);
     BTN.disabled = false;
 }
 
@@ -43,22 +50,20 @@ BTN.addEventListener("click", ()=>{
 
 function donacion(){
     if(DONACION.value === ""){
-        MENSAJE.insertAdjacentHTML("afterend", `<span class="NoDonado">No se ha donado.</span>`)
-        DONACION.value = "";
-        BTN.disabled = true;
+        MENSAJE.insertAdjacentHTML("afterend", `<span class="NoDonado">No se ha donado.</span>`);
         setTimeout(()=>{
-            document.querySelector(".NoDonado").style.display = "none";
+            document.querySelector(".NoDonado").remove();
             BTN.disabled = false;
         },3000);
     }else{
         MENSAJE.insertAdjacentHTML("afterend", `<span class="donado">Se ha donado la cantidad de $${DONACION.value} pesos.</span>`);
-        DONACION.value = "";
-        BTN.disabled = true;
         setTimeout(()=>{
-            document.querySelector(".donado").style.display = "none";
+            document.querySelector(".donado").remove();
             BTN.disabled = false;
         },3000);
     }
+    DONACION.value = "";
+    BTN.disabled = true;
 }
 
 
